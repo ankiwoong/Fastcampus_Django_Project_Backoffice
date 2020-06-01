@@ -24,6 +24,18 @@ mysql -u root -p -t < employees.sql
 ```bash
 SHOW DATABASES;
 ```
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| employees          |
+| mysql              |
+| performance_schema |
+| sakila             |
+| test               |
+| world              |
++--------------------+
+8 rows in set (0.00 sec)
 
 ## Python 
 * DB 설정
