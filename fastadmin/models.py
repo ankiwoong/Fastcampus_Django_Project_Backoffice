@@ -84,8 +84,10 @@ class Departments(models.Model):
 
 
 class DeptEmp(models.Model):
-    emp_no = models.OneToOneField('Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)
-    dept_no = models.ForeignKey(Departments, models.DO_NOTHING, db_column='dept_no')
+    emp_no = models.OneToOneField(
+        'Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)
+    dept_no = models.ForeignKey(
+        Departments, models.DO_NOTHING, db_column='dept_no')
     from_date = models.DateField()
     to_date = models.DateField()
 
@@ -96,8 +98,10 @@ class DeptEmp(models.Model):
 
 
 class DeptManager(models.Model):
-    emp_no = models.OneToOneField('Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)
-    dept_no = models.ForeignKey(Departments, models.DO_NOTHING, db_column='dept_no')
+    emp_no = models.OneToOneField(
+        'Employees', models.DO_NOTHING, db_column='emp_no', primary_key=True)
+    dept_no = models.ForeignKey(
+        Departments, models.DO_NOTHING, db_column='dept_no')
     from_date = models.DateField()
     to_date = models.DateField()
 
@@ -113,7 +117,8 @@ class DjangoAdminLog(models.Model):
     object_repr = models.CharField(max_length=200)
     action_flag = models.PositiveSmallIntegerField()
     change_message = models.TextField()
-    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    content_type = models.ForeignKey(
+        'DjangoContentType', models.DO_NOTHING, blank=True, null=True)
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
 
     class Meta:
@@ -162,10 +167,15 @@ class Employees(models.Model):
     class Meta:
         managed = False
         db_table = 'employees'
+        verbose_name = '직원명단'
+
+    def __str__(self):
+        return 'ID: %d, Name: %s' % (self.emp_no, self.first_name)
 
 
 class Salaries(models.Model):
-    emp_no = models.OneToOneField(Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
+    emp_no = models.OneToOneField(
+        Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
     salary = models.IntegerField()
     from_date = models.DateField()
     to_date = models.DateField()
@@ -177,7 +187,8 @@ class Salaries(models.Model):
 
 
 class Titles(models.Model):
-    emp_no = models.OneToOneField(Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
+    emp_no = models.OneToOneField(
+        Employees, models.DO_NOTHING, db_column='emp_no', primary_key=True)
     title = models.CharField(max_length=50)
     from_date = models.DateField()
     to_date = models.DateField(blank=True, null=True)
