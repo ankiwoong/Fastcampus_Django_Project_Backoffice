@@ -23,7 +23,6 @@ mysql -u root -p -t < employees.sql
 * DB 확인
 ```bash
 SHOW DATABASES;
-```
 +--------------------+
 | Database           |
 +--------------------+
@@ -36,6 +35,7 @@ SHOW DATABASES;
 | world              |
 +--------------------+
 8 rows in set (0.00 sec)
+```
 
 ## Python 
 * DB 설정
