@@ -169,8 +169,8 @@ class Employees(models.Model):
         db_table = 'employees'
         verbose_name = '직원명단'
 
-    def __str__(self):
-        return 'ID: %d, Name: %s' % (self.emp_no, self.first_name)
+    '''def __str__(self):
+        return 'ID: %d, Name: %s' % (self.emp_no, self.first_name)'''
 
 
 class Salaries(models.Model):
