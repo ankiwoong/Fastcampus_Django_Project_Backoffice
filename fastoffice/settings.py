@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'fastoffice.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'employess2',
+        'NAME': 'employees',
         'USER': 'root',
         'PASSWORD': '1q2w3e4r5t',
         'HOST': 'localhost',
