@@ -133,3 +133,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")      # 배포를 위한 static �
 # STATICFILES_DIRS = [                              # 개발을 위한 static 파일 처리
 #     os.path.join(BASE_DIR, "static"),
 # ]
+
+
+# MEDIA
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
