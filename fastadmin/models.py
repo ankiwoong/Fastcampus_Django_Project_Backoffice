@@ -82,6 +82,9 @@ class Departments(models.Model):
         managed = False
         db_table = 'departments'
 
+    def __str__(self):
+        return 'ID: %s, %s' % (self.dept_no, self.dept_name)
+
 
 class DeptEmp(models.Model):
     emp_no = models.OneToOneField(
@@ -169,8 +172,8 @@ class Employees(models.Model):
         db_table = 'employees'
         verbose_name = '직원명단'
 
-    '''def __str__(self):
-        return 'ID: %d, Name: %s' % (self.emp_no, self.first_name)'''
+    def __str__(self):
+        return 'ID: %d, Name: %s' % (self.emp_no, self.first_name)
 
 
 class Salaries(models.Model):

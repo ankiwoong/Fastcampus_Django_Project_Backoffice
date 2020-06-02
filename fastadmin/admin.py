@@ -1,7 +1,7 @@
 from django.contrib import admin
 from rangefilter.filter import DateRangeFilter, DateTimeRangeFilter
 
-from .models import Employees
+from .models import Employees, Departments
 
 
 # Register your models here.
@@ -14,3 +14,4 @@ class DisplayEmployee(admin.ModelAdmin):
 
 
 admin.site.register(Employees, DisplayEmployee)
+admin.site.register(Departments)
