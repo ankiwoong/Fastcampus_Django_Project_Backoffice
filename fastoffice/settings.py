@@ -61,7 +61,7 @@ ROOT_URLCONF = 'fastoffice.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,15 +124,23 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Django Admin
+GRAPPELLI_ADMIN_TITLE = ''
+
+# python manage.py customdashboard
+GRAPPELLI_INDEX_DASHBOARD = {
+    'django.contrib.admin.site': 'fastadmin.dashboard.CustomIndexDashboard',
+}
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")      # 배포를 위한 static 파일 처리
-# STATICFILES_DIRS = [                              # 개발을 위한 static 파일 처리
-#     os.path.join(BASE_DIR, "static"),
-# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")      # 배포를 위한 static 파일 처리
+STATICFILES_DIRS = [                              # 개발을 위한 static 파일 처리
+    os.path.join(BASE_DIR, "static"),
+]
 
 
 # MEDIA
