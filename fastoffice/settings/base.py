@@ -47,6 +47,7 @@ INSTALLED_APPS += [
     'fastadmin',
     'rangefilter',
     'suit',
+    'admin_honeypot',
 ]
 
 MIDDLEWARE = [
