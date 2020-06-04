@@ -31,11 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'grappelli',
+    'django.contrib.contenttypes',
+    # 'grappelli.dashboard',
+    # 'grappelli',
     'adminactions',
+    'django_admin_env_notice',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -70,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_admin_env_notice.context_processors.from_settings',
             ],
         },
     },
@@ -126,23 +129,20 @@ USE_L10N = True
 USE_TZ = True
 
 # Django Admin
-GRAPPELLI_ADMIN_TITLE = ''
+# GRAPPELLI_ADMIN_TITLE = ''
 
 # python manage.py customdashboard
-GRAPPELLI_INDEX_DASHBOARD = {
-    'django.contrib.admin.site': 'fastadmin.dashboard.CustomIndexDashboard',
-}
+# GRAPPELLI_INDEX_DASHBOARD = {
+#     'django.contrib.admin.site': 'fastadmin.dashboard.CustomIndexDashboard',
+# }
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")      # 배포를 위한 static 파일 처리
-STATICFILES_DIRS = [                              # 개발을 위한 static 파일 처리
-    os.path.join(BASE_DIR, "static"),
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
 ]
-
 
 # MEDIA
 MEDIA_URL = '/media/'

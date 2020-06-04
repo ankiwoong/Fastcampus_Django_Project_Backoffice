@@ -1,4 +1,6 @@
 from .base import *
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
+ENVIRONMENT_NAME = "Prod Server"
+ENVIRONMENT_COLOR = "#2e4bdb"
